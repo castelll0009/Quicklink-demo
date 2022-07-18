@@ -34,7 +34,8 @@ function agregarProductoCarrito(){
   
   cantidad_pedido= 1;
   precio_pedido = 6000; 
-  descripcion_pedido = $("#id-detalles-pedido").text();   //description actual 
+  descripcion_pedido = $("#id-detalles-pedido").val();   //description actual 
+  console.log("description to add"+descripcion_pedido);
   //creamos un nuevo template  tr que contendra los 3  valores        
   //AGREGAR FILA CARRITO CALCULAR TOTALES  , agregar un elemento al carrito      
 
@@ -52,8 +53,8 @@ function addNewRow(){
       <td> ${global_name_product}</td>
       <td>1</td>
       <td>6000</td>
-      <td clas="td-eliminar-producto" onclick="eliminarFilaPedido(${numero_fila})"><i  class="icon-basura fas fa-trash-alt"></i></td>
-      <input  class="descripcion-pedido" type="hidden"  value="${descripcion_pedido}">    
+      <td class="td-eliminar-producto" onclick="eliminarFilaPedido(${numero_fila})"><i  class="icon-basura fas fa-trash-alt"></i></td>
+      <td  style="position: absolute; display:none; opacity: 0;" class="descripcion-pedido-tabla">${descripcion_pedido}</td>    
     </tr>
     `); 
                     
@@ -92,30 +93,23 @@ boton_confirmar_orden.addEventListener("click", function(){
         //enlistamos los productos en una cadena desde el JSON_produtos
         
         let nombre_pedido = "";
+        let descripcion_pedido_ordenar = "";
         for(let i = 1; i <= numero_fila; i++){   
            nombre_pedido = $(`#fila${i} td:nth-child(2)`).text();
-            //nombre_pedido  =$("#fila1").children[1];              
-            console.log(nombre_pedido);
-            cadenaListaProductos +=`______________________________________________%0A                  
-            ${nombre_pedido}%0APRECIO:$6000
-            %0AOPCIÓN: The specialty of the house
-            %0AADICIÓN: surprise me with the additions
-            %0ADESCRIPCIÓN:  ${$(`#fila${i} td:nth-child(5)`).text()}
-            %0APRECIO:$6000
-            %0ACANTIDAD: 1
-            %0ASUBTOTAL: $6000 %0A%0A`;              
+           descripcion_pedido_ordenar = $(`#fila${i} td:nth-child(6)`).text();                          
+            console.log(nombre_pedido+" "+ descripcion_pedido_ordenar);
+            cadenaListaProductos +=`______________________________________________%0A${nombre_pedido}%0APRECIO:$6000%0AOPCIÓN: The specialty of the house%0AADICIÓN: surprise me with the additions%0ADESCRIPCIÓN: ${descripcion_pedido_ordenar}%0APRECIO: $6000%0ACANTIDAD: 1%0ASUBTOTAL: $6000%0A%0A`;              
           }                                         
       }   
       cadenaURL += cadenaEncabezado; 
       cadenaURL += cadenaListaProductos;
-      cadenaURL +=`______________________________________________%0ATOTALTOPAY: ${document.getElementById("total-pagar-pedido").innerText} %0A%0A->>Pago pendiente<<-`;
+      cadenaURL +=`______________________________________________%0ATOTAL TO PAY:${document.getElementById("total-pagar-pedido").innerText} %0A%0A->>Pago pendiente<<-%0A%0A%0A%0AYou see how easy it was, so it will be for your customers. Come on write to me! `;
       console.log(cadenaURL);
-      //acion enviar pedido WHapsap
+      //acion enviar pedido WHapsap      
       //URL_orden =  window.location = cadenaURL; 
-      URL_orden =  window.location = cadenaURL; 
-      //URL_orden = window.open(cadenaURL, '_blank');
+      URL_orden = window.open(cadenaURL, '_blank');
     } else{   
-    $.jGrowl(`¿Vas a comer viento?, Agrega productos al carrito porfavor`);
+    $.jGrowl(`Are you going to eat wind? Add products to cart please`);
     $(".icono-animation-burguer").css("display", "block");
   }
     
