@@ -51,11 +51,11 @@ function abrirCerrarRefri(){
 function changeImgResolution(){
 	if (screen.width < 1024){
 	//resolucion movil
-	console.log("movil");	
+	//console.log("movil");	
 	$('.img-foto').attr('src', 'imgs/fondo-mojitos.png');
 	}else{		
 	//resolucioin pc
-	console.log("pc");
+	//console.log("pc");
 	$('.img-foto').attr('src', 'imgs/portada-pc-q.png');	
 	}	
 }
@@ -64,7 +64,7 @@ function changeImgResolution(){
 /*cambiar la apariencia de la barra superiro al mover la rueda del mouse hacia abajo*/
 window.onscroll = function() {
   var y = window.scrollY;
-  console.log(y);
+  //console.log(y);
   if(y > 225){	  	  
 	var_header.style  =   "background-color :  rgb(0, 0, 0,0.7);";
   }else{
