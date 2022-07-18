@@ -98,12 +98,12 @@ boton_confirmar_orden.addEventListener("click", function(){
            nombre_pedido = $(`#fila${i} td:nth-child(2)`).text();
            descripcion_pedido_ordenar = $(`#fila${i} td:nth-child(6)`).text();                          
             console.log(nombre_pedido+" "+ descripcion_pedido_ordenar);
-            cadenaListaProductos +=`______________________________________________%0A${nombre_pedido}%0APRECIO:$6000%0AOPCIÓN: The specialty of the house%0AADICIÓN: surprise me with the additions%0ADESCRIPCIÓN: ${descripcion_pedido_ordenar}%0APRECIO: $6000%0ACANTIDAD: 1%0ASUBTOTAL: $6000%0A%0A`;              
+            cadenaListaProductos +=`_______________________%0A${nombre_pedido}%0APRECIO:$6000%0AOPCIÓN: The specialty of the house%0AADICIÓN: surprise me with the additions%0ADESCRIPCIÓN: ${descripcion_pedido_ordenar}%0APRECIO: $6000%0ACANTIDAD: 1%0ASUBTOTAL: $6000%0A%0A`;              
           }                                         
       }   
       cadenaURL += cadenaEncabezado; 
       cadenaURL += cadenaListaProductos;
-      cadenaURL +=`______________________________________________%0ATOTAL TO PAY:${document.getElementById("total-pagar-pedido").innerText} %0A%0A->>Pago pendiente<<-%0A%0A%0A%0AYou see how easy it was, so it will be for your customers. Come on write to me! `;
+      cadenaURL +=`_______________________%0ATOTAL TO PAY:${document.getElementById("total-pagar-pedido").innerText} %0A%0A->>Pago pendiente<<-%0A%0A%0A%0AYou see how easy it was, so it will be for your customers. Come on write to me! `;
       console.log(cadenaURL);
       //acion enviar pedido WHapsap      
       //URL_orden =  window.location = cadenaURL; 
