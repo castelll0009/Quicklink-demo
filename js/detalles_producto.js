@@ -4,27 +4,33 @@
   });
 */
 //selecionar producto y cambiar imagen en div detalles
+var global_element_selected_current;
+var global_name_product;
+var global_description_product;
 $(document).on('click', ".imagen-producto", function(){
-    let  element = $(this)[0];           
-    src_actual = $(element).attr("src");
-    
-    let src_imagen = $(element).attr("src");
-    ////console.log(src_imagen);
-    $(".img-detalles-producto").attr("src",src_imagen);       
-    if(estaMostrando()){
-     
-    }else{
-        setTimeout(function(){$( ".div-detalles" ).trigger( "click" );}, 200);        
+    //selecionamos los datos de cada producto par mostrar en div detalles
+    global_element_selected_current = $(this)[0];                   
+    let src_imagen = $(global_element_selected_current).attr("src");                      
+    global_name_product = $(global_element_selected_current.parentElement.children[1]).text();    
+    //console.log(global_name_product);
+
+    //en el divb detalles , poenmos los datos del prodcuto selecionado
+    $(".img-detalles-producto").attr("src",src_imagen);    
+    $("#titulo-detalles-producto").html(global_name_product);        
+    ////controlamos el click al producto   
+    if(!estaMostrando()){
+        setTimeout(function(){$( ".div-detalles" ).trigger( "click" );}, 200); 
     }
 }); 
 
+//funcion para  saber si se esta mostrando la div de talles producto
 function estaMostrando(){
     if(($(".div-detalles").attr("class")) == "div-detalles mostrar-detalles") {
         //console.log("mostrando");
         return true;
     }  else{
         //console.log("NO mostrando");
-        return     false;
+        return  false;
     }          
     
 }

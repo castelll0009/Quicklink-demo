@@ -9,11 +9,12 @@
   transition: all 500ms;
   width: 100%;
   height: max-content;
+  max-height: 50%;
   /* background-color: #0e0e0e; */
-  background-color: rgba(0, 0, 0, 0.86);
+  background-color: rgb(0 0 0 / 71%);
   position: fixed;
   border-radius: 5px;
-  margin-top: -300px;
+  margin-top: -110%;
   backdrop-filter: blur(2px);
   top: 0;
   z-index: 10;
@@ -22,8 +23,11 @@
   flex-direction: row;
   padding-top: 5px;
   padding-bottom: 0px;
-  z-index: 101;  
+  z-index: 101;
+  overflow: hidden;
 }
+
+
 .mostrar-detalles-carrito{             
   margin-top: 0px;    
 }
@@ -33,10 +37,14 @@
 }   
 
 .contenedor-tabla-factura{  
-  width: 100%;  
-  top: 0;  
-  z-index :1;  
+  width: 100%;
+  top: 0;
+  z-index: 1;
   position: relative;
+  overflow: hidden;
+  max-height: 40vh;
+  overflow: auto;
+
 }
 .contenedor-tabla-factura h1{   
   margin-top: 0px;
@@ -151,21 +159,69 @@ tr{
 .panel-body{
   position: relative;
 }
+.cont-botones-factura-absolute{  
+  width: 100%;
+  bottom: 0;
+}
 .botones-factura{    
-  position: relative;  
-  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 8px 10px 0px 10px;
+  align-items: center;
+  animation: fadein 2s;
+  background: linear-gradient(to top, #000000, transparent);
+  /* backdrop-filter: grayscale(1); */
+  padding-bottom: 20px;
+}
+/*icono-animation-burguer*/
+.icono-animation-burguer{    
+  z-index: 2;
+  width: 40px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 5px;
+  display: none;
+  animation: fadein 0.5s; 
+  animation: fadeout 1s; 
+}
+@keyframes fadein {
+  0% {
+  opacity:0;
+  }
+  50%{
+  opacity:0.5;
+  }
+  100% {
+  opacity:1;
+  }
+ }
+ @keyframes fadeout {
+  0% {
+  opacity:1;
+  }
+  50%{
+  opacity:0.5;
+  }
+  100% {
+  opacity:0;
+  }
+ }
+.cont-iconoBurguer-confirmarOrden{
+  display: flex;
+  flex-direction: row;
 }
 .icon-basura{
   font-size: 1.5em;
 }
 .btn-confirmar-orden{
-  position: absolute;
-  right: 10px;
-  border: dashed 2px;
-  border: dotted 4px;
-  padding-right: 5px;
-  padding-left: 5px;
-  font-size: 1.2em;
+  /*position: absolute; */
+    right: 10px;
+    border: dashed 2px;
+    border: dotted 4px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 1.2em;
 }
 /*
 .btn-concretar-orden{    
@@ -190,10 +246,11 @@ div.jGrowl {
 
 .flecha-atras-carrito{
   padding: 5px;
-  background-color:  rgba(0, 0, 0, 0.212);
-  color: rgb(255, 255, 255);    
-  border-radius: 50%;
-  border: solid 1px rgb(122, 121, 121);
-  margin-left: 15px;
-  
+  background-color: rgba(0, 0, 0, 0.212);
+  color: rgb(255, 255, 255);
+  border-radius: 100%;
+  height: fit-content;
+  width: fit-content;
+  border: solid 1px rgb(237 237 237 / 67%);
+  margin-bottom: -20px;
 }
