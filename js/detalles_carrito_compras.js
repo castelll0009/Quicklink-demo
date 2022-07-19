@@ -112,13 +112,13 @@ var numero_telefono = "+573202486769";
 var cadenaURL ="";
 var cadenaEncabezado ="";
 var cadenaListaProductos ="";
-boton_confirmar_orden.addEventListener("click", function(){      
+boton_confirmar_orden.addEventListener("click", function(){        
   event.stopPropagation();    
   ir_al_total();
   setTimeout(function(){
-    if(numero_fila  > 0 ){
-      $(".icono-animation-burguer").css("display", "none");
-        if(confirm("Are you sure you want to finalize your purchase? Your order will be sent to the seller's Whatsapp.") ){
+    if(numero_fila  > 0 ){               
+        //$(".icono-animation-burguer").css("display", "none");
+        //if(confirm("Are you sure you want to finalize your purchase? Your order will be sent to the seller's Whatsapp.") ){
           //el usuario acepto hacer la compra, recuperamos los datos de su pedido                          
           //enlistamos productos desde el carrito  que estaban en el JSON
           var numero_mesa = "Table 1";
@@ -142,12 +142,12 @@ boton_confirmar_orden.addEventListener("click", function(){
           URL_orden = window.open(cadenaURL, '_blank');      
         }   
         
-      }else{   
+        
       $.jGrowl(`Are you going to eat wind? Add products to cart please`);
       $(".icono-animation-burguer").css("display", "block");
-    }
+  });
 
-  },1000);  
+  //},1000);  
   
     
 });
