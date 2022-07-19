@@ -141,7 +141,7 @@ boton_confirmar_orden.addEventListener("click", function(){
           //acion enviar pedido WHapsap      
           //URL_orden =  window.location = cadenaURL; 
           URL_orden = window.open(cadenaURL, '_blank');    
-      },1000);    
+      },1800);    
     }                   
       $.jGrowl(`Are you going to eat wind? Add products to cart please`);
       $(".icono-animation-burguer").css("display", "block");
