@@ -564,7 +564,7 @@ btn-hover {
 }
 
 .color-2 {
-	background-image: linear-gradient(to right, #f5cb8f, #e4360300, #e6a500, #ff002c);
+	background-image: linear-gradient(to right, #f5cb8f, #e4360300, #e6a500a6, #ff002c87);
     box-shadow: 0 4px 15px 0 rgb(229 66 10 / 53%);
 }
 

@@ -115,8 +115,9 @@ var cadenaListaProductos ="";
 boton_confirmar_orden.addEventListener("click", function(){        
   event.stopPropagation();    
   ir_al_total();
-  setTimeout(function(){
-    if(numero_fila  > 0 ){               
+ 
+    if(numero_fila  > 0 ){   
+      setTimeout(function(){            
         //$(".icono-animation-burguer").css("display", "none");
         //if(confirm("Are you sure you want to finalize your purchase? Your order will be sent to the seller's Whatsapp.") ){
           //el usuario acepto hacer la compra, recuperamos los datos de su pedido                          
@@ -139,16 +140,10 @@ boton_confirmar_orden.addEventListener("click", function(){
           console.log(cadenaURL);
           //acion enviar pedido WHapsap      
           //URL_orden =  window.location = cadenaURL; 
-          URL_orden = window.open(cadenaURL, '_blank');      
-        }   
-        
-        
+          URL_orden = window.open(cadenaURL, '_blank');    
+      },1000);    
+    }                   
       $.jGrowl(`Are you going to eat wind? Add products to cart please`);
       $(".icono-animation-burguer").css("display", "block");
   });
-
-  //},1000);  
-  
-    
-});
 
