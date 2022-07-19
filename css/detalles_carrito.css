@@ -181,9 +181,8 @@ tr{
   background: white;
   border-radius: 50%;
   margin-right: 5px;
-  display: none;
-  animation: fadein 0.5s; 
-  animation: fadeout 1s; 
+  display: block;
+  animation: fadein 0.5s;   
 }
 @keyframes fadein {
   0% {
@@ -196,6 +195,9 @@ tr{
   opacity:1;
   }
  }
+ .fadeout{
+  animation: fadeout 1s;   
+ }
  @keyframes fadeout {
   0% {
   opacity:1;
@@ -207,6 +209,7 @@ tr{
   opacity:0;
   }
  }
+ 
 .cont-iconoBurguer-confirmarOrden{
   display: flex;
   flex-direction: row;

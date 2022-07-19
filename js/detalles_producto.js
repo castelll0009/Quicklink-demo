@@ -7,16 +7,20 @@
 var global_element_selected_current;
 var global_name_product;
 var global_description_product;
+var global_cantidad_productos = 1;
+
 $(document).on('click', ".imagen-producto", function(){
     //selecionamos los datos de cada producto par mostrar en div detalles
     global_element_selected_current = $(this)[0];                   
     let src_imagen = $(global_element_selected_current).attr("src");                      
     global_name_product = $(global_element_selected_current.parentElement.children[1]).text();    
+    //global_description_product =$(global_element_selected_current.parentElement.children[1]).text();   
     //console.log(global_name_product);
 
     //en el divb detalles , poenmos los datos del prodcuto selecionado
     $(".img-detalles-producto").attr("src",src_imagen);    
-    $("#titulo-detalles-producto").html(global_name_product);        
+    $("#titulo-detalles-producto").html(global_name_product);   
+
     ////controlamos el click al producto   
     if(!estaMostrando()){
         setTimeout(function(){$( ".div-detalles" ).trigger( "click" );}, 200); 
@@ -51,4 +55,25 @@ $(document).ready(function(){
 //cancelar la  propagacion del click
 $(".stopEventPropagation").click(function(e){
     event.stopPropagation();
+});
+
+//aumentar y disminuir produtos
+global_cantidad_productos =1;
+let var_cantidad_producto_actual = 1;
+$(".disminuir-productos").click(function(e){   
+    global_cantidad_productos--;
+    if(global_cantidad_productos <= 0){
+        global_cantidad_productos =1;
+    }else{        
+        $(".cantidad-producto").val(global_cantidad_productos);
+    }
+});
+
+$(".aumentar-productos").click(function(e){
+    global_cantidad_productos++;
+    if(global_cantidad_productos > 10){
+        global_cantidad_productos =10;
+    }else{        
+        $(".cantidad-producto").val(global_cantidad_productos);
+    }   
 });

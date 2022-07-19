@@ -1,10 +1,5 @@
   //FUNCION para desplegar los detalles del carrito
 
-$(document).on('click', '.btn-ver' , function(){                
-    //despliegue detalles con toggle          
-    $(".div-detalles-carrito").toggleClass("mostrar-detalles-carrito");        
-});   
-
 
 $(document).on('click', '.div-detalles-carrito', () =>{        
     $(".div-detalles-carrito").toggleClass("mostrar-detalles-carrito"); 
@@ -14,8 +9,16 @@ $(document).on('click', '.icono-carrito-compras', () =>{
   $(".div-detalles-carrito").toggleClass("mostrar-detalles-carrito"); 
 });
 
-$(document).on('click', '.btn-ordenar', () =>{  
-  $(".div-detalles-carrito").toggleClass("mostrar-detalles-carrito"); 
+
+
+
+//ver carrito 
+var boton_ver = document.querySelector(".btn-ver").addEventListener("click",   function(){
+  $(".div-detalles-carrito").toggleClass("mostrar-detalles-carrito");     
+});
+
+var boton_ordenar = document.querySelector(".btn-ordenar").addEventListener("click",   function(){
+  $(".div-detalles-carrito").toggleClass("mostrar-detalles-carrito");     
 });
 
 //agregar productos al carrito
@@ -29,9 +32,8 @@ boton_agregar.addEventListener("click", function(){
 //AGREGAR PRODUCTOS CARRITO
 var numero_fila = 0; 
 function agregarProductoCarrito(){     
-  //recuperamos el Nombre,Cantidad y el precio del producto agregar al  pedidoo carrito
-  var nombre_pedido = "";          
-  
+  //recuperamos el Nombre,Cantidad y el precio del producto agregar al  pedidoo carrito  
+  $(".icono-animation-burguer").addClass("fadeout");
   cantidad_pedido= 1;
   precio_pedido = 6000; 
   descripcion_pedido = $("#id-detalles-pedido").val();   //description actual 
@@ -39,15 +41,13 @@ function agregarProductoCarrito(){
   //creamos un nuevo template  tr que contendra los 3  valores        
   //AGREGAR FILA CARRITO CALCULAR TOTALES  , agregar un elemento al carrito      
 
-  addNewRow();
- 
-                
+  addNewRow();                 
 }
 function addNewRow(){        
   //por ahora quitamos la propiedad contenteitable de la t cantiodadeditable contenteditable        
     numero_fila++;
     console.log("ng: "+  "n: " +numero_fila)
-    $('.table').append(`
+    $('.table').prepend(`
     <tr id="fila${numero_fila}">
       <td> ${numero_fila}</td>
       <td> ${global_name_product}</td>
@@ -57,6 +57,20 @@ function addNewRow(){
       <td  style="position: absolute; display:none; opacity: 0;" class="descripcion-pedido-tabla">${descripcion_pedido}</td>    
     </tr>
     `); 
+
+    $(".cantidad-productos-carrito").html(numero_fila);    
+    /*
+    const elementa = document.querySelector('.cont-iconoCarrito-cantidadProductos');
+  element.classList.add('animate__animated', 'animate__bounceOutLeft');
+  */
+
+    console.log("numoer fila "+ numero_fila);
+   
+    $(".cont-iconoCarrito-cantidadProductos").addClass("animacion-corre-carrito");    
+    $(".cantidad-productos-carrito").toggleClass("animacion-agregar-carrito");    
+    //$(".cont-iconoCarrito-cantidadProductos").addClass("animacion-agregar-carrito");    
+      
+    $.jGrowl(global_name_product+ ` +added to cart`);
                     
 } 
 var index=0;
@@ -90,8 +104,7 @@ boton_confirmar_orden.addEventListener("click", function(){
         var numero_mesa = "Table 1";
         cadenaEncabezado = "https://wa.me/"+numero_telefono+"?text=🍺🍸🍨%0AQUICKLINK (ONLINE ORDER)%0A"+numero_mesa+"%0A🍺🍸🍨%0A%0A";
         
-        //enlistamos los productos en una cadena desde el JSON_produtos
-        
+        //enlistamos los productos en una cadena desde el JSON_produtos        
         let nombre_pedido = "";
         let descripcion_pedido_ordenar = "";
         for(let i = 1; i <= numero_fila; i++){   
@@ -99,16 +112,17 @@ boton_confirmar_orden.addEventListener("click", function(){
            descripcion_pedido_ordenar = $(`#fila${i} td:nth-child(6)`).text();                          
             console.log(nombre_pedido+" "+ descripcion_pedido_ordenar);
             cadenaListaProductos +=`_______________________%0A${nombre_pedido}%0APRECIO:$6000%0AOPCIÓN: The specialty of the house%0AADICIÓN: surprise me with the additions%0ADESCRIPCIÓN: ${descripcion_pedido_ordenar}%0APRECIO: $6000%0ACANTIDAD: 1%0ASUBTOTAL: $6000%0A%0A`;              
-          }                                         
+          }   
+        cadenaURL += cadenaEncabezado; 
+        cadenaURL += cadenaListaProductos;
+        cadenaURL +=`_______________________%0ATOTAL TO PAY:${document.getElementById("total-pagar-pedido").innerText} %0A%0A->>Pago pendiente<<-%0A%0A%0A%0AYou see how easy it was, so it will be for your customers. Come on write to me! `;
+        console.log(cadenaURL);
+        //acion enviar pedido WHapsap      
+        //URL_orden =  window.location = cadenaURL; 
+        URL_orden = window.open(cadenaURL, '_blank');      
       }   
-      cadenaURL += cadenaEncabezado; 
-      cadenaURL += cadenaListaProductos;
-      cadenaURL +=`_______________________%0ATOTAL TO PAY:${document.getElementById("total-pagar-pedido").innerText} %0A%0A->>Pago pendiente<<-%0A%0A%0A%0AYou see how easy it was, so it will be for your customers. Come on write to me! `;
-      console.log(cadenaURL);
-      //acion enviar pedido WHapsap      
-      //URL_orden =  window.location = cadenaURL; 
-      URL_orden = window.open(cadenaURL, '_blank');
-    } else{   
+      
+    }else{   
     $.jGrowl(`Are you going to eat wind? Add products to cart please`);
     $(".icono-animation-burguer").css("display", "block");
   }

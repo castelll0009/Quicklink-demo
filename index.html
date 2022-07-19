@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">		
 		<!-- jGRowl libreria  para notificaciones--> 
 		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css" /> 
 		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato:wght@300;400;700&family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
@@ -28,15 +28,19 @@
 		<header>
 			<div class="cont-header" >
 				<div  class="container-logo-title">
-					<span class="contenedor-imagen-logo">
-						<img id="zumbido" src="imgs/logo-quicklink.png" onClick="sonidoLogo()" class=" zumbido animate__animated animate__flash animate__fast"   >
+					<span id="id-cont-imagen-logo"  class="contenedor-imagen-logo animate__animated animate__rubberBand">
+						<img id="id-imagen-logo" src="imgs/logo-quicklink.png" onClick="sonidoLogo()" class="" >
 					</span>									
 					<h1 class="title-quick">Quick</h1><h1>link</h1>					
 				</div>					
 				<!-- cabecera menu y demas -->							
 				<div id="icono-carrito-compras-main" class="cont-mesadomicilio-carrito ">
-					<h1>Table 1</h1>					
-					<i class="icono-carrito-compras  fas fa-cart-arrow-down"></i>
+					<h1>Table 1</h1>	
+					<span  class="cont-iconoCarrito-cantidadProductos"  >
+						<i class="icono-carrito-compras fas fa-cart-arrow-down"></i>		
+						<p class="cantidad-productos-carrito">0</p>															
+					</span>				
+					
 				</div>
 			</div>				
 		</header>		
@@ -462,6 +466,8 @@
 	
 		<!-- Swiper JS -->		
 		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>		  
+
+		<script src="js/header.js"></script>		 
 		<script src="js/detalles_carrito_compras.js"></script>
 		<script src="js/detalles_producto.js"></script>
 		<script src="js/swiper-slide.js"></script>

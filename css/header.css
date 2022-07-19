@@ -6,6 +6,48 @@ header{
     /*backdrop-filter: blur(2px);*/
   
 }
+/*logo animates*/
+#id-cont-imagen-logo:active{
+	animation: step-start;
+    animation-duration: 2;
+}
+.cont-iconoCarrito-cantidadProductos:active{
+    animation: step-start;
+    animation-duration: 2;
+}
+
+.animacion-corre-carrito{
+    animation: backInLeft; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1.6s; /* don't forget to set a duration! */    
+}
+.animacion-agregar-carrito{        
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    /*animation-delay: .8s;*/
+    animation-duration: 1.6s; /* don't forget to set a duration! */    
+}
+.jGrowl-notification {  
+    margin-top: 50px !important;
+}
+.cont-iconoCarrito-cantidadProductos{
+    position: relative;
+}
+.cantidad-productos-carrito{
+    position: absolute;
+    left: 35%;
+    top: -12px;
+    width: fit-content;
+    font-size: 0.6em;
+    height: fit-content;
+    padding: 1px 5px 1px 5px;
+    border-radius: 100%;
+    color: black;
+    font-weight: 900;
+    background: #fffcfc;
+    color: white;
+    background: #868282;
+    font-weight: 500;    
+}
+
 .cont-header{           
     display: flex;
     max-height: fit-content;
