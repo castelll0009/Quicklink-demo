@@ -7,3 +7,4 @@ document.querySelector("#id-cont-imagen-logo").addEventListener("click",function
         $("#id-imagen-logo").attr("src",img_logo_mordido);
     },3000);    
 });
+//depurando
