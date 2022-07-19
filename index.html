@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="css/detalles_carrito.css">
 		<link rel="stylesheet" href="css/detalles_producto.css">
 		<link rel="stylesheet" href="css/sections-blocks.css">		
-		<link rel="stylesheet" href="css/swiper-slide.css">			
+		<link rel="stylesheet" href="css/swiper-slide.css">					
 		<meta name="viewport"  content="width=device-width initial-scale=1.0">
 		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">  
@@ -17,6 +17,8 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.gstatic.com">		
+		<!-- Notificaciones Bootrap--> 
+		<link rel="stylesheet" href="https://cdn.rawgit.com/OnsenUI/OnsenUI/2.0.0-alpha.13/build/css/onsen-css-components.css">
 		<!-- jGRowl libreria  para notificaciones--> 
 		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css" /> 
 		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato:wght@300;400;700&family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
@@ -51,10 +53,8 @@
 			<!-- Contenedor detalles  factura carrito-->						
 			<div class="div-detalles-carrito">				
 				<div class="contenedor-tabla-factura">
-					<h1>SHOPPING CART</h1>				  
-					<div class="panel panel-default">
-					<div class="panel-body">
-						<table class="table cut-off">
+					<h1>SHOPPING CART</h1>								  				
+					<table class="table cut-off">
 						<thead>
 							<tr class="tr-tabla-carrito">
 							<th class="th-numero">#</th>
@@ -63,35 +63,8 @@
 							<th>Price</th>
 							<th class="th-acction"></th>
 							</tr>
-						</thead>
-						<tbody class="tbody-lista-productos-carrito">
-							<!--
-							 nombre=Produtos apellido= cantidad Precio=email
-							<tr class="celdas-tabla">
-							<td  style="cursor: not-allowed;">
-								{{$index + 1}}
-								10
-							</td>
-							<td style="cursor: not-allowed;" row="{{$index}}" field="productosCarrito">
-									{{item.productosCarrito}}
-									Hamburguesa Veguetariana con Pastel
-							</td>
-							<td class="cantidadEditable" editable-td row="{{$index}}" field="cantidadCarrito">
-								{{item.cantidadCarrito}}
-								20								
-							</td>
-							<td style="cursor: not-allowed;" row="{{$index}}" field="precioCarrito">
-								{{item.precioCarrito}}
-								100000
-							</td>
-							<td>
-								<span style="cursor: pointer;"><i class="fas fa-trash-alt"></i></span>
-							</td>
-							</tr>
-						-->
-						</tbody>
-						
-						<tbody class="tbody-total">
+						</thead>															
+						<tbody id="tbody-total" class="tbody-total">
 							<tr class="tr-carrito-total">
 							<td style="cursor: not-allowed;">
 								$
@@ -111,23 +84,25 @@
 								<span style="cursor: pointer;"></span>
 							</td>
 							</tr>
-						</tbody>
-						
-						</table>
-						
-					
-															  
-											
-					</div>
-					
-					</div>
+						</tbody>					
+					</table>	
+					<div id="bot-table"></div>																		
 				</div>
 				<div class="cont-botones-factura-absolute">
 					<div class="botones-factura">									  					  
-						<i class="flecha-atras-carrito fas fa-arrow-up"></i>
+						<i class="flecha-atras-carrito fas fa-arrow-up"></i>	
+												
 						<div class="cont-iconoBurguer-confirmarOrden">
-							<img class="icono-animation-burguer"  src="imgs/burger-icon-animation.gif" alt=""> 
-							<button type="button" class="btn-confirmar-orden btn-default">Confirm order <span><i class="fas fa-receipt"></i></span></button>
+							<!--
+								<img class="icono-animation-burguer"  src="imgs/burger-icon-animation.gif" alt=""> 
+							-->
+							<span class="stopEventPropagation cont-flecha-abajo-total-carrito"> 								
+								Total to pay				
+								<i class="icono-cont-flecha-abajo-total-carrito fa fa-chevron-down"></i>			
+							</span>			
+							<button type="button" class="btn-confirmar-orden btn-default">Confirm order 
+								<!-- <span><i class="fas fa-receipt"></i></span>-->
+							</button>
 						</div>						
 					
 					</div>	
@@ -464,8 +439,12 @@
 		Your browser does not support the audio element.
 		</audio>
 	
+		<!-- Notificaciones Boostrap -->	
+		<script src="js/notificaciones-boostrap.js"></script>
 		<!-- Swiper JS -->		
-		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>		  
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>	
+		<!-- Scroll animation -->		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 		<script src="js/header.js"></script>		 
 		<script src="js/detalles_carrito_compras.js"></script>
