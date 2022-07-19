@@ -7,4 +7,4 @@ document.querySelector("#id-cont-imagen-logo").addEventListener("click",function
         $("#id-imagen-logo").attr("src",img_logo);
     },3000);    
 });
-//depurando logo mordido
+//depurando logo mordido ssssss
