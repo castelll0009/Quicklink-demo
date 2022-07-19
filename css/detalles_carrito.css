@@ -262,6 +262,10 @@ tr{
     height: fit-content;
     border-radius: 3%;
 }
+.btn-confirmar-orden:hover{
+  text-decoration: none;
+  outline: none;
+}
 /*
 .btn-concretar-orden{    
   position: absolute;

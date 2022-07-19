@@ -48,7 +48,10 @@
 		</header>		
 		
 		<main >	
-			<i id="beepc" onclick="vistaEscritorio()" class="fas fa-laptop"></i>
+			<span class="cont-menu-opciones">				
+				<i id="btn-carta" onclick="vistaEscritorio()" class="botones-opciones fas fa-list-ul"></i>
+				<i id="beepc" onclick="vistaEscritorio()" class="botones-opciones fas fa-laptop"></i>
+			</span>			
 					
 			<!-- Contenedor detalles  factura carrito-->						
 			<div class="div-detalles-carrito">				
@@ -96,11 +99,12 @@
 							<!--
 								<img class="icono-animation-burguer"  src="imgs/burger-icon-animation.gif" alt=""> 
 							-->
+							
 							<span class="stopEventPropagation cont-flecha-abajo-total-carrito"> 								
 								Total to pay				
 								<i class="icono-cont-flecha-abajo-total-carrito fa fa-chevron-down"></i>			
 							</span>			
-							<button type="button" class="btn-confirmar-orden btn-default">Confirm order 
+							<button id="btn-confirmar-orden" type="button" class="btn-hover color-6">Confirm order 
 								<!-- <span><i class="fas fa-receipt"></i></span>-->
 							</button>
 						</div>						
@@ -147,9 +151,9 @@
 						<span class="precio-unidades">						
 							<p id="precio-detalles-producto" class="precio-producto">$ 6000</p>
 							<span class="span-cantidad">
-								<button class="botones-unidades disminuir-productos stopEventPropagation">-</button>
+								<button class="botones-unidades color-degradado btn-degradado disminuir-productos stopEventPropagation">-</button>
 								<input type="number" class="cantidad-producto stopEventPropagation" value="1">
-								<button class="botones-unidades aumentar-productos  stopEventPropagation">+</button>																															
+								<button class="botones-unidades color-degradado btn-degradado aumentar-productos  stopEventPropagation">+</button>																															
 							</span>		
 						</span>	
 						</div>														
@@ -158,10 +162,10 @@
 							
 				<div class="cont-botones-div-detalles">
 					<div class="cont-botones-detalles-absolute">
-						<button class="stopEventPropagation btn-accion btn-ver"><i class="fas fa-shopping-cart"></i>check out</button>				
-						<button class="stopEventPropagation btn-accion btn-propina"><i class="fas fa-coins"></i>tip</button>						
-						<button class="stopEventPropagation btn-accion btn-agregar"><i class="fas fa-cart-plus"></i>add</button>				
-						<button class="stopEventPropagation btn-accion btn-ordenar"><i class="fas fa-utensils"></i> order</button>	
+						<button class="color-2 stopEventPropagation btn-accion   btn-ver"><i class="fas fa-shopping-cart"></i>check out</button>				
+						<button class="color-2 stopEventPropagation btn-accion   btn-propina"><i class="fas fa-coins"></i>tip</button>						
+						<button class="color-2 stopEventPropagation btn-accion   btn-agregar"><i class="fas fa-cart-plus"></i>add</button>				
+						<button class="color-2 stopEventPropagation btn-accion   btn-ordenar "><i class="fas fa-utensils"></i> order</button>	
 					</div>					
 				</div>
 

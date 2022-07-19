@@ -107,7 +107,7 @@ function eliminarFilaPedido(index) {
 
   
 //CONFIRMAR  ORDEN 
-var boton_confirmar_orden = document.querySelector(".btn-confirmar-orden");
+var boton_confirmar_orden = document.querySelector("#btn-confirmar-orden");
 var numero_telefono = "+573202486769";
 var cadenaURL ="";
 var cadenaEncabezado ="";
