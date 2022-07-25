@@ -36,7 +36,6 @@ main {
 
 
 /*container-form-settings*/
-.container-form-settings {}
 
 .cont-row .cont-table-products {
     overflow-x: scroll;
@@ -58,10 +57,22 @@ body .container {
     display: flex;
     flex-wrap: nowrap;
 }
-.cont-row .container-form-settings {            
+main .container-form-settings-movil {                    
+    background: white;      
+    min-width: fit-content;      
+    margin-left: 0%;
+    z-index: 1;    
+    display: block;  
+    width: 100%;
+    position: absolute;
+}
+.container-form-settings {                    
     background: white;
     z-index: 1;        
     min-width: fit-content;
+    position: relative;    
+    z-index: 1;    
+    display: block;  
 }
 
 .nav-bar {
@@ -96,6 +107,13 @@ body .container {
 .form-group   textarea{
     height: 100px !important;
 }
+/*show form from left*/
+.show-form-from-left {
+    position: absolute !important;
+    display: block !important;
+    margin-left: 0% !important;    
+  
+}
 
 /* variantes-disponibles*/
 .div-add-variantes,
@@ -117,8 +135,28 @@ body .container {
     border-radius: 10%;
     background-color: rgb(199, 199, 199);
 }
-
+/*ONLÑY RESOLUCION PC*/
+@media only screen and (min-width: 768px) {
+    main .container-form-settings-movil{
+        position: absolute;            
+        margin-left: -100%;
+        opacity: 0;
+        display: none;
+    }
+}
+/*ONLY RESOLUTION MOVIL*/
 @media only screen and (max-width: 768px) {
+    .cont-row .container-form-settings-movil{
+        position: absolute !important;        
+        z-index: 1;
+        margin-left: 0%;
+        display: block;  
+    }
+    main .container-form-settings{  
+        position: absolute !important;                    
+        display: none;
+        margin-left: -100%;                          
+    }
     .container{
         max-width: auto;
         min-width: 100px;
@@ -138,14 +176,7 @@ body .container {
         max-width: fit-content !important;
     }
 
-    .container-form-settings {        
-        padding-left: 10px !important;
-        position: absolute !important;
-        background: white;
-        z-index: 1;
-        margin-left: -100%;
-        display: none;        
-    }
+
 
     #task-form .form-group {
         margin-bottom: 0.8rem ;
