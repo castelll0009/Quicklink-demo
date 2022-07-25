@@ -20,25 +20,22 @@ function searchShowElements(){
             let search = $("#search").val();       
             console.log(search);
             $.ajax({
-                url: "backend/product-search.php",
+                url: "backend/task-search.php",
                 type: "POST",
                 data: {search},
-                success: function(response){
+                success: function(response){                    
+                    console.log(response);                    
                     
-                    console.log(response);
-                    /*
                     if(!response.error) {
                         let elements = JSON.parse(response);                                                      
                         $('#tasks').html(getTemplateProducto(elements));                         
-                    }
-                    */
+                    }                                        
                 }
             })
         }
     });                    
 }
 
-/*
 function getTemplateProducto(jsonElements){
     let template= "";       
     jsonElements.forEach(element => {   
@@ -56,4 +53,3 @@ function getTemplateProducto(jsonElements){
     });
     return template;
 }
-*/

@@ -1,7 +1,6 @@
 <?php
 include('database.php');
 
-/*
 $search = $_POST['search'];
 if(!empty($search)) {
   $query = "SELECT * FROM tbl_productos WHERE nombre_producto LIKE '$search%'";
@@ -25,6 +24,5 @@ if(!empty($search)) {
   $jsonstring = json_encode($json);
   echo $jsonstring;
 }
-*/
 
 ?>

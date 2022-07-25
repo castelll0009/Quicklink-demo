@@ -20,6 +20,15 @@ body{
 	*/
 	color: white;
 }
+main{	
+	overflow: hidden;
+    background-attachment: fixed;
+    background-image: url(../imgs/textura-fondo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+}
 
 .botones-opciones{						
 	font-size: 1em;
@@ -135,15 +144,7 @@ width: 100%;
 }
 
 
-main{	
-	overflow: hidden;
-    background-attachment: fixed;
-    background-image: url(../imgs/textura-fondo.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    z-index: 0;
-}
+
 .container-esquema{	
 	width: 100%;	
 	position: relative;

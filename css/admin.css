@@ -1,11 +1,40 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
-body{
-width: 100%;
-min-width: max-content;
+body{		
+	font-family: 'Kaushan Script', cursive;
+	font-family: 'Lato', sans-serif;
+	font-family: 'Zilla Slab', serif;
+	background-color: #07070A;
+	/*-webkit-user-select: none;*/
+	/*background-image: url(../imgs/fondo-portada.jpg);
+	background-size: cover;	
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+	*/
+	color: white;
+}
+main{	
+	overflow: hidden;
+    background-attachment: fixed;    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+}
+
+
+/*container-form-settings*/
+.container-form-settings{
+
+}
+.cont-table-products{
+    overflow-x: scroll;
+    height: fit-content;
 }
 .row{
     width: 100%;
