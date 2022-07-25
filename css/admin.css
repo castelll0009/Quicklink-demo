@@ -1,66 +1,169 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
-body{		
-	font-family: 'Kaushan Script', cursive;
-	font-family: 'Lato', sans-serif;
-	font-family: 'Zilla Slab', serif;
-	background-color: #07070A;
-	/*-webkit-user-select: none;*/
-	/*background-image: url(../imgs/fondo-portada.jpg);
+
+body {
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Zilla Slab', serif;
+    background-color: #07070A;
+    /*-webkit-user-select: none;*/
+    /*background-image: url(../imgs/fondo-portada.jpg);
 	background-size: cover;	
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 	*/
-	color: white;
+    color: white;
 }
-main{	
-	overflow: hidden;
-    background-attachment: fixed;    
+
+main {    
+    overflow: hidden;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     z-index: 0;
 }
 
+.cont-formSetting-tableProducts {
+    display: flex;
+    flex-direction: row;
+}
+
 
 /*container-form-settings*/
-.container-form-settings{
+.container-form-settings {}
 
-}
-.cont-table-products{
+.cont-row .cont-table-products {
     overflow-x: scroll;
     height: fit-content;
+    flex: auto;
+    max-width: fit-content;
 }
-.row{
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+body .container {
+    width: 100%;    
+    max-width: 100%;
+}
+.container .cont-row{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.cont-row .container-form-settings {            
+    background: white;
+    z-index: 1;        
+    min-width: fit-content;
+}
+
+.nav-bar {
     width: 100%;
 }
-.container{    
-    width: 100%;
-    min-width: 1000px;
-}   
-.nav-bar{
-width: 100%;
-}
-.card{
+
+.card {
     width: max-content;
+    width: 100%;
 }
-.card-body{
- 
+
+.card-body {}
+
+.botones-opciones {
+    font-size: 1em;
+    border-radius: 30%;
+    min-width: 30px;
+    text-align: center;
+    min-height: auto;
+    padding: 5px 5px 5px 5px;
+    color: #ffffff;
+    background: rgb(212 97 15 / 72%);
+    background: repeating-linear-gradient(340deg, #d0d723, #ff0808 100px);
+    bottom: 10px;
+    position: fixed;
+    right: 5px;
+    z-index: 100;
 }
+.form-group {    
+}
+
+.form-group   textarea{
+    height: 100px !important;
+}
+
 /* variantes-disponibles*/
-.div-add-variantes, .div-adiciones , .div-topings{
+.div-add-variantes,
+.div-adiciones,
+.div-topings {
     flex-direction: row;
     display: flex;
 }
-.btn-add-variantes, .btn-add-adiciones, .btn-del-variantes, .btn-del-adiciones{
+
+.btn-add-variantes,
+.btn-add-adiciones,
+.btn-del-variantes,
+.btn-del-adiciones {
     max-width: 50px;
-    max-height: 50px;    
-    font-size:0.8em;
-    border-radius: 10%;      
+    max-height: 50px;
+    margin-top: 0px !important;
+    font-size: 0.8em;
+    margin-left: 5px;
+    border-radius: 10%;
     background-color: rgb(199, 199, 199);
+}
+
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: auto;
+        min-width: 100px;
+        overflow: hidden;
+        padding: 20px !important;
+    }
+
+
+    .container .cont-row {
+        padding: 0 !important;
+    }
+
+    .cont-formSetting-tableProducts {
+        padding: auto !important;
+    }
+    .cont-table-products{
+        max-width: fit-content !important;
+    }
+
+    .container-form-settings {        
+        padding-left: 10px !important;
+        position: absolute !important;
+        background: white;
+        z-index: 1;
+        margin-left: -100%;
+        display: none;        
+    }
+
+    #task-form .form-group {
+        margin-bottom: 0.8rem ;
+    }
+    
+    .form-group .form-control {
+        display: block;
+        width: 100%;
+        height: fit-content ;
+        padding: 8px ;
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #55595c;
+        background-color: #f7f7f9;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
 }
