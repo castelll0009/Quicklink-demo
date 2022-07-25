@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+body{
+width: 100%;
+min-width: max-content;
+}
+.row{
+    width: 100%;
+}
+.container{    
+    width: 100%;
+    min-width: 1000px;
+}   
+.nav-bar{
+width: 100%;
+}
+.card{
+    width: max-content;
+}
+.card-body{
+ 
+}
+/* variantes-disponibles*/
+.div-add-variantes, .div-adiciones , .div-topings{
+    flex-direction: row;
+    display: flex;
+}
+.btn-add-variantes, .btn-add-adiciones, .btn-del-variantes, .btn-del-adiciones{
+    max-width: 50px;
+    max-height: 50px;    
+    font-size:0.8em;
+    border-radius: 10%;      
+    background-color: rgb(199, 199, 199);
+}

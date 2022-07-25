@@ -142,8 +142,10 @@ boton_confirmar_orden.addEventListener("click", function(){
           //URL_orden =  window.location = cadenaURL; 
           URL_orden = window.open(cadenaURL, '_blank');    
       },1800);    
-    }                   
+    }else{
       $.jGrowl(`Are you going to eat wind? Add products to cart please`);
-      $(".icono-animation-burguer").css("display", "block");
+      //$(".icono-animation-burguer").css("display", "block");
+    }                       
+    
   });
 
