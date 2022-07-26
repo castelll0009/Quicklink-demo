@@ -1,63 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" >  
-    <meta name="viewport"  content="width=device-width initial-scale=1.0">    
 
-    <link rel="stylesheet" href="css/admin.css">	
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">  
-    
-    <title>Quicklink Admin</title>
-    <!-- BOOTSTRAP 4  -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-  </head>
-  
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Quicklink Admin</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <form class="form-inline my-2 my-lg-0">
-            <input  name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="btn  my-2 my-sm-0" style="background-color: orange;" type="submit">Buscar</button>
-          </form>
-      </div>
-    </nav>
-    <main>
-      <!-- Container form setting MOVIL-->
-      <div class="container-form-settings-movil">
-        <div class="card">
-          <div class="card-body">                                      
-        
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-            <form method="post" action="#" enctype="multipart/form-data">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="imgs/default-placeholder.png">
-                <div class="card-body">
-                  <h5 class="card-title">Sube una foto</h5>
-                  <p class="card-text">Sube una imagen para tu nuevo producto. La imagen puede ser en formato .jpg, o .png.</p>                    
-                  <div class="form-group">
-                    <label for="image">Nueva imagen</label>
-                    <input type="file" class="form-control-file" name="image" id="image">
-                  </div>
-                  <input type="button" class="btn btn-primary upload" value="Subir">
+  <title>Quicklink Admin</title>
+  <!-- BOOTSTRAP 4  -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Quicklink Admin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <form class="form-inline my-2 my-lg-0">
+          <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar"
+            aria-label="Search">
+          <button class="btn  my-2 my-sm-0" style="background-color: orange;" type="submit">Buscar</button>
+        </form>
+    </div>
+  </nav>
+  <main>
+    <!-- Container form setting MOVIL-->
+    <div class="container-form-settings-movil">
+      <div class="card">
+        <div class="card-body">
+
+
+          <form method="post" action="#" enctype="multipart/form-data">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="imgs/default-placeholder.png">
+              <div class="card-body">
+                <h5 class="card-title">Sube una foto</h5>
+                <p class="card-text">Sube una imagen para tu nuevo producto. La imagen puede ser en formato .jpg, o
+                  .png.</p>
+                <div class="form-group">
+                  <label for="image">Nueva imagen</label>
+                  <input type="file" class="form-control-file" name="image" id="image">
                 </div>
+                <input type="button" class="btn btn-primary upload" value="Subir">
               </div>
-              </form>		
+            </div>
+          </form>
 
-            <form id="task-form"  enctype="multipart/form-data">                                                                                                              
+          <form id="task-form" enctype="multipart/form-data">
             <!-- 
               <form id="task-form" action="backend/subir-img.php" method="POST" enctype="multipart/form-data">                                                  
               <input type="file" name="archivo" id="archivo">                  
-            -->              
-              <!-- <button type="submit" name="btn-submit">Cargar imagen</button> -->            
-              <!-- FORM TO ADD TASKS 
+            -->
+            <!-- <button type="submit" name="btn-submit">Cargar imagen</button> -->
+            <!-- FORM TO ADD TASKS 
             <form  id="task-form" enctype="multipart/form-data">
               <div class="form-group subir-imagen">
                 <canvas id="canvas" width="300" height="300"></canvas>
@@ -67,58 +72,64 @@
                 <img id="imagenMostrada" name="imagenMostrada">                          
               </div>
             -->
-              <div class="form-group">
-                <select type="text" id="category" class="form-control" placeholder="Categoria">
-                  <option  value="cafes">Cafes</option>
-                  <option  value="frappes">Frappes</option>
-                  <option  value="bebidasCalientes">Bebidas Calientes</option>
-                  <option  value="bebidasFrias">Bebidas Frias</option>
-                  <option  value="malteadas">Malteadas</option>
-                  <option  value="megaMalteadas">Mega Malteadas</option>
-                  <option  value="wafflesdeSal">Waffles de sal</option>
-                  <option  value="wafflesDulces">Waffles Dulces</option>
-                  <option  value="antojos">Antojos</option>
-                  <option  value="cocteles">Cocteles</option>
-                  <option  value="papicar">Papicar</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <input type="text" name="name" id="name" placeholder="Nombre Producto" class="form-control">
-              </div>
-              <div class="form-group">
-                  <input type="number" name="price" id="price" class="form-control" placeholder="Precio"></textarea>
-              </div>
-              <div class="form-group">
-                <textarea id="description" cols="30" rows="10" class="form-control" placeholder="Descripción del producto"></textarea>
-              </div>
+            <div class="form-group">
+              <select type="text" id="category" class="form-control" placeholder="Categoria">
+                <option value="cafes">Cafes</option>
+                <option value="frappes">Frappes</option>
+                <option value="bebidasCalientes">Bebidas Calientes</option>
+                <option value="bebidasFrias">Bebidas Frias</option>
+                <option value="malteadas">Malteadas</option>
+                <option value="megaMalteadas">Mega Malteadas</option>
+                <option value="wafflesdeSal">Waffles de sal</option>
+                <option value="wafflesDulces">Waffles Dulces</option>
+                <option value="antojos">Antojos</option>
+                <option value="cocteles">Cocteles</option>
+                <option value="papicar">Papicar</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" name="name" id="name" placeholder="Nombre Producto" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="number" name="price" id="price" class="form-control" placeholder="Precio"></textarea>
+            </div>
+            <div class="form-group">
+              <textarea id="description" cols="30" rows="10" class="form-control"
+                placeholder="Descripción del producto"></textarea>
+            </div>
 
             <!-- variantes de pedidos-->
-              <div class="form-group">
-                <div class="div-add-variantes">
-                  <input type="text" name="title-disponibles" id="input-variantes-disponibles" placeholder="Variantes disponibles del producto" class="form-control">     
-                  <button type="button" class="btn-primary btn-add-variantes btn-block text-center">Agregar </button>       
-                  <button type="button" id="btn-del-variantes" class="btn-primary  btn-del-variantes btn-block text-center">Eliminar </button>    
-                </div>                      
-                <select type="text" id="sel-variantes-disponibles" class="form-control" placeholder="disponibles">                    						      
-                  <option value="Ninguna"> Ninguna</option>
-                </select>                  
+            <div class="form-group">
+              <div class="div-add-variantes">
+                <input type="text" name="title-disponibles" id="input-variantes-disponibles"
+                  placeholder="Variantes disponibles del producto" class="form-control">
+                <button type="button" class="btn-primary btn-add-variantes btn-block text-center">Agregar </button>
+                <button type="button" id="btn-del-variantes"
+                  class="btn-primary  btn-del-variantes btn-block text-center">Eliminar </button>
               </div>
-              
+              <select type="text" id="sel-variantes-disponibles" class="form-control" placeholder="disponibles">
+                <option value="Ninguna"> Ninguna</option>
+              </select>
+            </div>
+
             <!-- variantes de pedidos-->
-              <div class="form-group">
-                <div class="div-adiciones">
-                  <input type="text" name="title-adiciones" id="input-adiciones-disponibles" placeholder="Adiciones disponibles de tu producto" class="form-control">     
-                  <button type="button" class="btn-primary  btn-add-adiciones btn-block text-center">Agregar </button>                          
-                  <button type="button" id="btn-del-adiciones" class="btn-primary btn-del-adiciones btn-block text-center">Eliminar </button>    
-                </div>                                      						      
-                <select type="text" id="sel-adiciones-disponibles" class="form-control" placeholder="Adiciones disponibles de tu producto">
-                  <option value="Ninguna"> Ninguna</option>
-                </select>
-                
-                </select>
+            <div class="form-group">
+              <div class="div-adiciones">
+                <input type="text" name="title-adiciones" id="input-adiciones-disponibles"
+                  placeholder="Adiciones disponibles de tu producto" class="form-control">
+                <button type="button" class="btn-primary  btn-add-adiciones btn-block text-center">Agregar </button>
+                <button type="button" id="btn-del-adiciones"
+                  class="btn-primary btn-del-adiciones btn-block text-center">Eliminar </button>
               </div>
-               <!-- Topins -->
-              <!--  
+              <select type="text" id="sel-adiciones-disponibles" class="form-control"
+                placeholder="Adiciones disponibles de tu producto">
+                <option value="Ninguna"> Ninguna</option>
+              </select>
+
+              </select>
+            </div>
+            <!-- Topins -->
+            <!--  
                <div class="form-group">
                 <div class="div-topings">
                   <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
@@ -135,33 +146,34 @@
               </div>
                 -->
 
-              <input name="taskId" type="hidden" id="taskId">
-              <button type="submit" class="btn btn-primary btn-block text-center">
-                Guardar/Subir producto 
-              </button>
-            </form>
-          </div>
+            <input name="taskId" type="hidden" id="taskId">
+            <button type="submit" class="btn btn-primary btn-block text-center">
+              Guardar/Subir producto
+            </button>
+          </form>
         </div>
       </div>
-       <!-- NAVIGATION  -->
- 
- 		<span class="cont-menu-opciones">				
-				<i id="btn-carta" onclick="showForm();" class="botones-opciones fas fa-list-ul"></i>				
-			</span>		
+    </div>
+    <!-- NAVIGATION  -->
+
+    <span class="cont-menu-opciones">
+      <i id="btn-carta" onclick="showForm();" class="botones-opciones fas fa-list-ul"></i>
+    </span>
 
     <div class="container">
       <div class="row p-4 cont-row">
         <div class="col-md-5 container-form-settings">
           <div class="card">
-            <div class="card-body">                                      
-          
- 
+            <div class="card-body">
+
+
               <form method="post" action="#" enctype="multipart/form-data">
                 <div class="card" style="width: 18rem;">
                   <img class="card-img-top" src="imgs/default-placeholder.png">
                   <div class="card-body">
                     <h5 class="card-title">Sube una foto</h5>
-                    <p class="card-text">Sube una imagen para tu nuevo producto. La imagen puede ser en formato .jpg, o .png.</p>                    
+                    <p class="card-text">Sube una imagen para tu nuevo producto. La imagen puede ser en formato .jpg, o
+                      .png.</p>
                     <div class="form-group">
                       <label for="image">Nueva imagen</label>
                       <input type="file" class="form-control-file" name="image" id="image">
@@ -169,14 +181,14 @@
                     <input type="button" class="btn btn-primary upload" value="Subir">
                   </div>
                 </div>
-                </form>		
+              </form>
 
-              <form id="task-form"  enctype="multipart/form-data">                                                                                                              
-              <!-- 
+              <form id="task-form" enctype="multipart/form-data">
+                <!-- 
                 <form id="task-form" action="backend/subir-img.php" method="POST" enctype="multipart/form-data">                                                  
                 <input type="file" name="archivo" id="archivo">                  
-              -->              
-                <!-- <button type="submit" name="btn-submit">Cargar imagen</button> -->            
+              -->
+                <!-- <button type="submit" name="btn-submit">Cargar imagen</button> -->
                 <!-- FORM TO ADD TASKS 
               <form  id="task-form" enctype="multipart/form-data">
                 <div class="form-group subir-imagen">
@@ -189,55 +201,61 @@
               -->
                 <div class="form-group">
                   <select type="text" id="category" class="form-control" placeholder="Categoria">
-                    <option  value="cafes">Cafes</option>
-							      <option  value="frappes">Frappes</option>
-							      <option  value="bebidasCalientes">Bebidas Calientes</option>
-                    <option  value="bebidasFrias">Bebidas Frias</option>
-                    <option  value="malteadas">Malteadas</option>
-                    <option  value="megaMalteadas">Mega Malteadas</option>
-                    <option  value="wafflesdeSal">Waffles de sal</option>
-                    <option  value="wafflesDulces">Waffles Dulces</option>
-                    <option  value="antojos">Antojos</option>
-                    <option  value="cocteles">Cocteles</option>
-                    <option  value="papicar">Papicar</option>
+                    <option value="cafes">Cafes</option>
+                    <option value="frappes">Frappes</option>
+                    <option value="bebidasCalientes">Bebidas Calientes</option>
+                    <option value="bebidasFrias">Bebidas Frias</option>
+                    <option value="malteadas">Malteadas</option>
+                    <option value="megaMalteadas">Mega Malteadas</option>
+                    <option value="wafflesdeSal">Waffles de sal</option>
+                    <option value="wafflesDulces">Waffles Dulces</option>
+                    <option value="antojos">Antojos</option>
+                    <option value="cocteles">Cocteles</option>
+                    <option value="papicar">Papicar</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <input type="text" name="name" id="name" placeholder="Nombre Producto" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="number" name="price" id="price" class="form-control" placeholder="Precio"></textarea>
+                  <input type="number" name="price" id="price" class="form-control" placeholder="Precio"></textarea>
                 </div>
                 <div class="form-group">
-                  <textarea id="description" cols="30" rows="10" class="form-control" placeholder="Descripción del producto"></textarea>
+                  <textarea id="description" cols="30" rows="10" class="form-control"
+                    placeholder="Descripción del producto"></textarea>
                 </div>
 
-              <!-- variantes de pedidos-->
+                <!-- variantes de pedidos-->
                 <div class="form-group">
                   <div class="div-add-variantes">
-                    <input type="text" name="title-disponibles" id="input-variantes-disponibles" placeholder="Variantes disponibles del producto" class="form-control">     
-                    <button type="button" class="btn-primary btn-add-variantes btn-block text-center">Agregar </button>       
-                    <button type="button" id="btn-del-variantes" class="btn-primary  btn-del-variantes btn-block text-center">Eliminar </button>    
-                  </div>                      
-                  <select type="text" id="sel-variantes-disponibles" class="form-control" placeholder="disponibles">                    						      
+                    <input type="text" name="title-disponibles" id="input-variantes-disponibles"
+                      placeholder="Variantes disponibles del producto" class="form-control">
+                    <button type="button" class="btn-primary btn-add-variantes btn-block text-center">Agregar </button>
+                    <button type="button" id="btn-del-variantes"
+                      class="btn-primary  btn-del-variantes btn-block text-center">Eliminar </button>
+                  </div>
+                  <select type="text" id="sel-variantes-disponibles" class="form-control" placeholder="disponibles">
                     <option value="Ninguna"> Ninguna</option>
-                  </select>                  
+                  </select>
                 </div>
-                
-              <!-- variantes de pedidos-->
+
+                <!-- variantes de pedidos-->
                 <div class="form-group">
                   <div class="div-adiciones">
-                    <input type="text" name="title-adiciones" id="input-adiciones-disponibles" placeholder="Adiciones disponibles de tu producto" class="form-control">     
-                    <button type="button" class="btn-primary  btn-add-adiciones btn-block text-center">Agregar </button>                          
-                    <button type="button" id="btn-del-adiciones" class="btn-primary btn-del-adiciones btn-block text-center">Eliminar </button>    
-                  </div>                                      						      
-                  <select type="text" id="sel-adiciones-disponibles" class="form-control" placeholder="Adiciones disponibles de tu producto">
+                    <input type="text" name="title-adiciones" id="input-adiciones-disponibles"
+                      placeholder="Adiciones disponibles de tu producto" class="form-control">
+                    <button type="button" class="btn-primary  btn-add-adiciones btn-block text-center">Agregar </button>
+                    <button type="button" id="btn-del-adiciones"
+                      class="btn-primary btn-del-adiciones btn-block text-center">Eliminar </button>
+                  </div>
+                  <select type="text" id="sel-adiciones-disponibles" class="form-control"
+                    placeholder="Adiciones disponibles de tu producto">
                     <option value="Ninguna"> Ninguna</option>
                   </select>
-                  
+
                   </select>
                 </div>
-                 <!-- Topins -->
+                <!-- Topins -->
                 <!--  
                  <div class="form-group">
                   <div class="div-topings">
@@ -257,7 +275,7 @@
 
                 <input name="taskId" type="hidden" id="taskId">
                 <button type="submit" class="btn btn-primary btn-block text-center">
-                  Guardar/Subir producto 
+                  Guardar/Subir producto
                 </button>
               </form>
             </div>
@@ -265,7 +283,7 @@
         </div>
 
         <!-- TABLE  -->
-        <div class="col-md-7 cont-table-products">      
+        <div class="col-md-7 cont-table-products">
 
           <table class="table table-bordered table-sm">
             <thead class="bg-dark text-white">
@@ -274,31 +292,47 @@
                 <td>Categoria</td>
                 <td>Nombre</td>
                 <td>Precio</td>
-                <td>Description</td> 
+                <td>Description</td>
                 <td>Variantes disponibles</td>
-                <td>Adiciónes</td>                                                             
+                <td>Adiciónes</td>
               </tr>
             </thead>
             <tbody id="tasks">
 
             </tbody>
           </table>
+
+          <div class="cont-list-products-admin d-flex flex-row flex-wrap text-center">
+            <!-- Code by w3codegenerator.com -->
+            <div class="card-products ml-2 rounded card   bg-dark text-white" style="width: 18rem;">
+              <img src="http://w3codegenerator.com/img/sample-image/new_zealand-300x225.jpg" class="card-img-top"
+                alt="Card image cap">
+              <div class="card-body d-flex flex-column p-2">
+                <h6 class="card-title mb-0 ">Card title</h6>
+                <p class="card-text text-center">$1000</p>                
+              </div>
+              <a href="#" class="a-edit-product  p-1.2 m-0 h-0  ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                </svg>
+             </a>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
 
-    </main>
+  </main>
 
-   
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-    <!-- Frontend Logic -->
-    <script src="js/app-request.js"></script>   
-    <script src="js/admin.js"></script>          
-  </body>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Frontend Logic -->
+  <script src="js/app-request.js"></script>
+  <script src="js/admin.js"></script>
+</body>
 
 </html>
-

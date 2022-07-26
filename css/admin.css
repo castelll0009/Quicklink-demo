@@ -135,6 +135,40 @@ main .container-form-settings-movil {
     border-radius: 10%;
     background-color: rgb(199, 199, 199);
 }
+
+/*cards  products*/
+.cont-list-products-admin {
+    font-size: 0.9em;
+    justify-content: center;
+    margin: 0;
+}
+.cont-list-products-admin h6, p {
+    font-size: 0.9em ;
+    margin: 0;
+}
+.cont-list-products-admin  p {
+    font-size: 1em ;
+    margin: 0;
+}
+.cont-list-products-admin .card-products{
+    min-width: auto;
+    max-width: 90px ;
+    height: auto;
+    margin: 2px;
+}
+.a-edit-product{
+    position: absolute;
+    background-color: #ffc107;
+    /* float: right; */
+    color: #6b6b6b;
+    max-width: fit-content;
+    right: 2px;
+    padding: 2px !important;
+    top: 2px;
+    border-radius: 50%;
+}
+
+
 /*ONLÑY RESOLUCION PC*/
 @media only screen and (min-width: 768px) {
     main .container-form-settings-movil{

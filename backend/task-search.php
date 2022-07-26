@@ -19,7 +19,7 @@ if(!empty($search)) {
       'precio' => $row['precio'],
       'descripcion' => $row['descripcion'],
       'id' => $row['id']
-    );
+    );    
   }
   $jsonstring = json_encode($json);
   echo $jsonstring;
