@@ -58,7 +58,7 @@ function changeImgResolution(){
 	}else{		
 	//resolucioin pc
 	//console.log("pc");
-	$('.img-foto').attr('src', 'imgs/portada-pc-q.png');	
+	$('.img-foto').attr('src', 'imgs/fondo-mojitos.png');	
 	}	
 }
 
